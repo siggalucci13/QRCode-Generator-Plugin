@@ -1,0 +1,58 @@
+openapi: 3.0.1
+info:
+  title: QR Code Generator Plugin
+  description: A plugin that generates a QR Code based on the user instructions and URL provided.
+  version: 'v1'
+servers:
+  - url: https://qrcode-generator-plugin.siggalucci.repl.co
+paths:
+  /generate:
+    get:
+      operationId: generateQRCode
+      summary: Generates a QR Code based on the user instructions and URL provided
+      parameters:
+        - name: QR_TEXT
+          in: query
+          description: The URL of the QR Code
+          required: true
+          schema:
+            type: string
+        - name: QR_SIZE
+          in: query
+          description: The size of the QR Code
+          required: false
+          schema:
+            type: number
+        - name: EYE_STYLE
+          in: query
+          description: The style of the QR Code
+          required: true
+          schema:
+            type: string
+        - name: QR_FG_COLOR
+          in: query
+          description: QR Code foreground color
+          required: false
+          schema:
+            type: string
+        - name: QR_BG_COLOR
+          in: query
+          description: QR Code background color
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/codeGeneratorResponse'
+components:
+  schemas:
+    codeGeneratorResponse:
+      type: object
+      properties:
+        QRCode:
+          type: string
+          description: The QR Code

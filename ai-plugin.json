@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "QR Code Generator",
+  "name_for_model": "qrcodegenerator",
+  "description_for_human": "Plugin for creating QR Codes.",
+  "description_for_model": "Plugin for creating QR Codes based on user input.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://qrcode-generator-plugin.siggalucci.repl.co/.well-known/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://qrcode-generator-plugin.siggalucci.repl.co/static/logo.png",
+  "contact_email": "siggalucci@gmail.com",
+  "legal_info_url": "https://qrcode-generator-plugin.siggalucci.repl.co/static/legal.txt"
+}
